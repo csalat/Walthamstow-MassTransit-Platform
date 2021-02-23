@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Title>Walthamstow.MassTransit.Platform</Title>
+    <Description>Fork of MassTransit-Platform, only supports rabbitMq and azure bus  </Description>
+    <PackageProjectUrl>https://github.com/csalat/Walthamstow-MassTransit-Platform/</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/csalat/Walthamstow-MassTransit-Platform/</PackageLicenseUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.1.5" />
+    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="7.1.5" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="7.1.5" />
+    <PackageReference Include="MassTransit.Prometheus" Version="7.1.5" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.16.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="3.1.11" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.11" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.11" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="4.1.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+</Project>
