@@ -6,7 +6,7 @@
     <Title>Walthamstow.MassTransit.Platform</Title>
     <Description>Fork of MassTransit-Platform, only supports rabbitMq and azure bus, all credits go for MassTransit project</Description>
     <PackageProjectUrl>https://github.com/csalat/Walthamstow-MassTransit-Platform/</PackageProjectUrl>
-    <PackageVersion>7.1.5</PackageVersion>
+    <PackageVersion>7.1.6</PackageVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/csalat/Walthamstow-MassTransit-Platform/</RepositoryUrl>
   </PropertyGroup>
@@ -17,11 +17,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MassTransit.AspNetCore" Version="7.1.5" />
-    <PackageReference Include="MassTransit.Analyzers" Version="7.1.5" />
-    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="7.1.5" />
-    <PackageReference Include="MassTransit.RabbitMQ" Version="7.1.5" />
-    <PackageReference Include="MassTransit.Prometheus" Version="7.1.5" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.1.6" />
+    <PackageReference Include="MassTransit.Analyzers" Version="7.1.6" />
+    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="7.1.6" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="7.1.6" />
+    <PackageReference Include="MassTransit.Prometheus" Version="7.1.6" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.17.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="2.2.0" />
