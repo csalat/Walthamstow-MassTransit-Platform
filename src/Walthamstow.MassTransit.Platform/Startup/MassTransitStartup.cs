@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Prometheus;
 using Serilog;
+using Walthamstow.MassTransit.Platform.SagaConfig;
 using Walthamstow.MassTransit.Platform.Startup.RabbitMq;
 using Walthamstow.MassTransit.Platform.Startup.ServiceBus;
 
@@ -44,7 +45,9 @@ namespace Walthamstow.MassTransit.Platform.Startup
             ServiceBusStartupBusFactory.Configure(services, Configuration);
 
             var configurationServiceProvider = services.BuildServiceProvider();
-
+            
+            services.ConfigureSagaDbs(Configuration);
+            
             List<IPlatformStartup> platformStartups = configurationServiceProvider.
                 GetService<IEnumerable<IPlatformStartup>>()?.ToList();
 
@@ -54,7 +57,7 @@ namespace Walthamstow.MassTransit.Platform.Startup
             services.AddMassTransit(cfg =>
             {
                 foreach (var platformStartup in platformStartups)
-                    platformStartup.ConfigureMassTransit(cfg, services);
+                    platformStartup.ConfigurePlatform(cfg, services, Configuration);
 
                 CreateBus(cfg, configurationServiceProvider);
             });

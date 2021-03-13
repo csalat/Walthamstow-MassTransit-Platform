@@ -2,6 +2,7 @@
 using MassTransit.ExtensionsDependencyInjectionIntegration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Walthamstow.MassTransit.Platform.Startup
@@ -16,7 +17,9 @@ namespace Walthamstow.MassTransit.Platform.Startup
         /// </summary>
         /// <param name="configurator">Use to configure consumers, sagas, activities, request clients, etc.</param>
         /// <param name="services">Use to add dependencies to the container</param>
-        void ConfigureMassTransit(IServiceCollectionBusConfigurator configurator, IServiceCollection services);
+        /// <param name="configuration"></param>
+        void ConfigurePlatform(IServiceCollectionBusConfigurator configurator, IServiceCollection services,
+            IConfiguration configuration);
 
         /// <summary>
         /// Configure the bus, using the supplied configurators
