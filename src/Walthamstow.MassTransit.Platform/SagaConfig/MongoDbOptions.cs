@@ -21,4 +21,12 @@
         /// </summary>
         public string CollectionName { get; set; }
     }
+
+    public class SqlServerDbConfigOptions
+    {
+        public string SagaName { get; set; }
+
+        public string ConnectionString { get; set; }
+    }
+
 }
