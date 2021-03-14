@@ -5,6 +5,6 @@ namespace Walthamstow.MassTransit.Platform.SagaConfig
     public class SagaDbConfigs
     {
         public List<MongoDbConfigOptions> SagaMongoDbOptions { get; set; }
-        public List<MongoDbConfigOptions> SagaSqlServerOptions { get; set; }
+        public List<SqlServerDbConfigOptions> SagaSqlServerOptions { get; set; }
     }
 }

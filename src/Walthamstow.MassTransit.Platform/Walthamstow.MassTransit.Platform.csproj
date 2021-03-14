@@ -6,7 +6,7 @@
     <Title>Walthamstow.MassTransit.Platform</Title>
     <Description>Fork of MassTransit-Platform, only supports rabbitMq and azure bus, all credits go for MassTransit project</Description>
     <PackageProjectUrl>https://github.com/csalat/Walthamstow-MassTransit-Platform/</PackageProjectUrl>
-    <PackageVersion>7.1.6.4</PackageVersion>
+    <PackageVersion>7.1.6.5</PackageVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/csalat/Walthamstow-MassTransit-Platform/</RepositoryUrl>
   </PropertyGroup>
