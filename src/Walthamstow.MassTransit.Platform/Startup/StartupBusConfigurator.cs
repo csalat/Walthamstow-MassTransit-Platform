@@ -16,10 +16,11 @@ namespace Walthamstow.MassTransit.Platform.Startup
         public const string RMQ = "rmq";
         public const string AzureServiceBus = "servicebus";
         public const string ASB = "asb";
-
+        
+        public const string Mediator = "mediator";
         public PlatformOptions()
         {
-            Transport = RabbitMq;
+            Transport = Mediator;
         }
 
         public string Transport { get; set; }
@@ -54,6 +55,10 @@ namespace Walthamstow.MassTransit.Platform.Startup
                     case AzureServiceBus when ServiceBusEntityNameValidator.Validator.IsValidEntityName(Scheduler):
                     case ASB when ServiceBusEntityNameValidator.Validator.IsValidEntityName(Scheduler):
                         address = new Uri($"queue:{Scheduler}");
+                        return true;
+                    
+                    case Mediator:
+                        address = default;
                         return true;
                 }
             }

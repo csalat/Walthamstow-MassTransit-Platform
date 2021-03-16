@@ -39,5 +39,4 @@ namespace Walthamstow.MassTransit.Platform.Startup.ServiceBus
             services.Configure<ServiceBusOptions>(configuration.GetSection("ASB"));
         }
     }
-
 }

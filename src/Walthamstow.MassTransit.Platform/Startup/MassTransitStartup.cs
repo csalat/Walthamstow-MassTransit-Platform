@@ -102,7 +102,9 @@ namespace Walthamstow.MassTransit.Platform.Startup
                 case PlatformOptions.ASB:
                     new ServiceBusStartupBusFactory().CreateBus(busConfigurator, configurator);
                     break;
-
+                
+                case PlatformOptions.Mediator:
+                    break;
                 default:
                     throw new ConfigurationException($"Unknown transport type: {platformOptions.Transport}");
             }
