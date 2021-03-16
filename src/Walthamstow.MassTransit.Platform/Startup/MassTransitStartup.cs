@@ -23,6 +23,8 @@ using Serilog;
 using Walthamstow.MassTransit.Platform.SagaConfig;
 using Walthamstow.MassTransit.Platform.Startup.RabbitMq;
 using Walthamstow.MassTransit.Platform.Startup.ServiceBus;
+using Walthamstow.MassTransit.Platform.Transports.RabbitMq;
+using Walthamstow.MassTransit.Platform.Transports.ServiceBus;
 
 namespace Walthamstow.MassTransit.Platform.Startup
 {
@@ -39,7 +41,7 @@ namespace Walthamstow.MassTransit.Platform.Startup
         {
             Log.Information("Configuring MassTransit Services");
             services.AddHealthChecks();
-            services.Configure<PlatformOptions>(Configuration);
+            services.Configure<PlatformOptions>(Configuration.GetSection("Platform"));
 
             RabbitMqStartupBusFactory.Configure(services, Configuration);
             ServiceBusStartupBusFactory.Configure(services, Configuration);
@@ -88,16 +90,14 @@ namespace Walthamstow.MassTransit.Platform.Startup
         void CreateBus(IServiceCollectionBusConfigurator busConfigurator, IServiceProvider provider)
         {
             var platformOptions = provider.GetRequiredService<IOptions<PlatformOptions>>().Value;
-
             var configurator = new StartupBusConfigurator(platformOptions);
-
             switch (platformOptions.Transport.ToLower(CultureInfo.InvariantCulture))
             {
                 case PlatformOptions.RabbitMq:
                 case PlatformOptions.RMQ:
                     new RabbitMqStartupBusFactory().CreateBus(busConfigurator, configurator);
                     break;
-
+            
                 case PlatformOptions.AzureServiceBus:
                 case PlatformOptions.ASB:
                     new ServiceBusStartupBusFactory().CreateBus(busConfigurator, configurator);

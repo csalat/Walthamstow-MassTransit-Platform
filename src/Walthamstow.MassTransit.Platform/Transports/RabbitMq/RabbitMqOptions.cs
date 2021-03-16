@@ -19,5 +19,6 @@ namespace Walthamstow.MassTransit.Platform.Transports.RabbitMq
         public string User { get; set; }
         public string Pass { get; set; }
         public bool UseSsl { get; set; }
+        public bool Enabled { get; set; }
     }
 }
