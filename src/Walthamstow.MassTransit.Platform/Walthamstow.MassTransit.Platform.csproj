@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Title>Walthamstow.MassTransit.Platform</Title>
     <Description>Fork of MassTransit-Platform, only supports rabbitMq and azure bus, all credits go for MassTransit project</Description>
     <PackageProjectUrl>https://github.com/csalat/Walthamstow-MassTransit-Platform/</PackageProjectUrl>
-    <PackageVersion>7.1.6.9</PackageVersion>
+    <PackageVersion>7.1.6.10</PackageVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/csalat/Walthamstow-MassTransit-Platform/</RepositoryUrl>
   </PropertyGroup>
