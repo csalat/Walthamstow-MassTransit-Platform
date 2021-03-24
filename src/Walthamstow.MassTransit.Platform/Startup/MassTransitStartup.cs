@@ -128,12 +128,6 @@ namespace Walthamstow.MassTransit.Platform.Startup
             });
             app.UseHealthChecks("/health/live", new HealthCheckOptions {ResponseWriter = HealthCheckResponseWriter});
 
-            if (!string.IsNullOrWhiteSpace(platformOptions.Prometheus))
-            {
-                Log.Information("Configuring Prometheus Endpoint: /metrics");
-
-                app.UseMetricServer();
-            }
         }
 
         static Task HealthCheckResponseWriter(HttpContext context, HealthReport result)
